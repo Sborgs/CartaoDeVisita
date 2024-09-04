@@ -11,7 +11,7 @@ const filesToCache = [
 // instalar o Service Worker e armazenar em cache
 self.addEventListener('install', event => {
     event.waitUntil(
-        cache.open(cacheName).then( cache => {
+        caches.open(cacheName).then( cache => {
             return cache.addAll(filesToCache);
         })
     )
